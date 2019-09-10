@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+
+import Header from "./components/Header";
+import Page from "./components/Page";
+import CharacterSearch from "./components/CharacterSearch";
+import CharacterResults from "./components/CharacterResults";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Header>Star wars character search</Header>
+      <Page>
+        <CharacterSearch />
+        <CharacterResults />
+      </Page>
+    </Fragment>
   );
 }
 
