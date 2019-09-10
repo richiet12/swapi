@@ -20,10 +20,11 @@ const capitalize = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-export default () => {
+export default ({ result: { name } }) => {
+  console.log(name);
   return (
     <div css={styles.result}>
-      <Heading level="3">Luke Skywalker</Heading>
+      <Heading level="3">{name}</Heading>
 
       <table css={styles.traitTable}>
         <thead>

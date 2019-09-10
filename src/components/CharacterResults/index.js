@@ -5,11 +5,12 @@ import CharacterResult from "../CharacterResult";
 
 import * as styles from "./styles";
 
-export default () => {
+export default ({ results }) => {
+  console.log(results);
   return (
     <div css={styles.results}>
-      {[1, 2, 3].map(item => {
-        return <CharacterResult />;
+      {results.map(result => {
+        return <CharacterResult result={result} key={result.url} />;
       })}
     </div>
   );
