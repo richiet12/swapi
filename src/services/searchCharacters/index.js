@@ -1,4 +1,4 @@
-import getFilmTitles from "./getFilmTitles";
+import getFilmTitles from "../getFilmTitles";
 
 const urlDomain = "https://swapi.co";
 const urlPath = "/api/people/";

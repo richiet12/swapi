@@ -20,6 +20,7 @@ export const traitTableHeader = css`
 
 export const traitTableCell = css`
   width: 35%;
+  vertical-align: text-bottom;
 `;
 
 export const traitTableCellValue = css`

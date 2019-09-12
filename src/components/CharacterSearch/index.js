@@ -12,12 +12,13 @@ export default ({ searchTerm, handleSearchTermChange }) => {
   return (
     <form css={styles.search} onSubmit={onSubmit}>
       <label>
-        <span css={styles.labelText}> text search</span>
+        <span css={styles.labelText}>Search by text</span>
         <input
+          autoFocus
           value={searchTerm}
           type="text"
           css={styles.input}
-          placeholder="e.g. luke"
+          placeholder="e.g. Luke Skywalker"
           onChange={handleSearchTermChange}
         />
       </label>
