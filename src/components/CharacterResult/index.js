@@ -5,23 +5,13 @@ import Heading from "../Heading";
 
 import * as styles from "./styles";
 
-const traits = {
-  height: "172",
-  mass: "77",
-  hair_color: "blond",
-  skin_color: "fair",
-  eye_color: "blue",
-  birth_year: "19BBY",
-  gender: "male",
-  films: "The Empire Strikes Back, The Empire Strikes Back 2"
-};
-
 const capitalize = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-export default ({ result: { name } }) => {
+export default ({ result: { name, traits } }) => {
   console.log(name);
+  console.log(traits);
   return (
     <div css={styles.result}>
       <Heading level="3">{name}</Heading>
@@ -34,18 +24,19 @@ export default ({ result: { name } }) => {
           </tr>
         </thead>
         <tbody>
-          {Object.keys(traits).map(key => {
-            return (
-              <tr key={key}>
-                <td css={styles.traitTableCell}>
-                  <strong>{capitalize(key.replace("_", " "))}</strong>
-                </td>
-                <td css={styles.traitTableCellValue}>
-                  {capitalize(traits[key])}
-                </td>
-              </tr>
-            );
-          })}
+          {traits &&
+            Object.keys(traits).map(key => {
+              return (
+                <tr key={key}>
+                  <td css={styles.traitTableCell}>
+                    <strong>{capitalize(key.replace("_", " "))}</strong>
+                  </td>
+                  <td css={styles.traitTableCellValue}>
+                    {capitalize(traits[key])}
+                  </td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>

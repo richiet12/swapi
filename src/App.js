@@ -13,33 +13,9 @@ function App() {
   const [results, setResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // const debounce = (callback, wait) => {
-  //   let timeout;
-  //   return (...args) => {
-  //     const context = this;
-  //     clearTimeout(timeout);
-  //     timeout = setTimeout(() => callback.apply(context, args), wait);
-  //   };
-  // };
-
-  const search = () => {
-    console.log("search");
-    // searchCharacters(newSearchTerm).then(data => {
-    //   console.log(data);
-    // }),
-  };
-
   const handleSearchTermChange = event => {
     const newSearchTerm = event.target.value;
     setSearchTerm(newSearchTerm);
-    // debounce(
-    //   search,
-    //   // fetch results
-    //   // tidy results
-    //   // set results
-
-    //   1000
-    // );
   };
 
   const debouncedSearchTerm = debounce(searchTerm, 500);
@@ -52,10 +28,8 @@ function App() {
         // Set isSearching state
         // setIsSearching(true);
         // Fire off our API call
-        searchCharacters(debouncedSearchTerm).then(({ results }) => {
-          // Set back to false since request finished
-          // setIsSearching(false);
-          // Set results state
+        searchCharacters(debouncedSearchTerm).then(results => {
+          console.log({ results });
           setResults(results);
         });
       } else {
@@ -77,7 +51,7 @@ function App() {
           handleSearchTermChange={handleSearchTermChange}
           searchTerm={searchTerm}
         />
-        <CharacterResults results={results} />
+        <CharacterResults results={results} searchTerm={searchTerm} />
       </Page>
     </Fragment>
   );
