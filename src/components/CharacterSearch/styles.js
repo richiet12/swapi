@@ -9,12 +9,12 @@ export const search = css`
 `;
 
 export const input = css`
-  margin-bottom: 5rem;
+  background: transparent;
   border: none;
   border-bottom: 1px solid ${colours.base};
   color: ${colours.brand};
-  background: transparent;
   font-size: 3rem;
+  margin-bottom: 5rem;
 `;
 
 export const labelText = css`

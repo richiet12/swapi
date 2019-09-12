@@ -3,8 +3,8 @@ import { css } from "@emotion/core";
 import { fonts, colours } from "../../designs/theme";
 
 export const page = css`
-  margin: 0 auto;
   padding: 0 2rem;
+  margin: 0 auto;
   max-width: 120rem;
 `;
 

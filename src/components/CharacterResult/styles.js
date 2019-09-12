@@ -3,10 +3,12 @@ import { css } from "@emotion/core";
 import { colours } from "../../designs/theme";
 
 export const result = css`
-  margin: 0 auto 4rem;
-  width: 26rem;
   border: 1px solid ${colours.fontBase};
+
+  margin: 0 auto 4rem;
   padding: 2rem 3rem;
+
+  width: 26rem;
 `;
 
 export const traitTable = css`
@@ -18,11 +20,11 @@ export const traitTableHeader = css`
 `;
 
 export const traitTableCell = css`
-  width: 35%;
   vertical-align: text-bottom;
+  width: 35%;
 `;
 
 export const traitTableCellValue = css`
-  width: 65%;
   line-height: 3rem;
+  width: 65%;
 `;
