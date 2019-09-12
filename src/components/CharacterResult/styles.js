@@ -3,10 +3,9 @@ import { css } from "@emotion/core";
 import { colours } from "../../designs/theme";
 
 export const result = css`
-  margin: 0 auto;
-  width: 30rem;
+  margin: 0 auto 4rem;
+  width: 26rem;
   border: 1px solid ${colours.fontBase};
-  margin-bottom: 4rem;
   padding: 2rem 3rem;
 `;
 
