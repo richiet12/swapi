@@ -1,9 +1,13 @@
 ## Tech Test
 
 This is my solution to the SWAPI coding challnge.
+
 I have left the design very minimal. It is mobile first with the search results stacking on mobile.
+
 The services are covered by unit tests and I have included one React Testing Library (RTL) to cover the CharacterSearch component (the only component which handles user interaction). With more time I would extend the test coverage to cover all the components either using RTL or jest snapshots.
+
 Due to time constraints I have not included a "loading" spinner to indicate to the user that a fetch is in process and I have only included very simple error messaging.
+
 I have included debounce and caching features to improve performance.
 
 To run this project follow the instructions below.
