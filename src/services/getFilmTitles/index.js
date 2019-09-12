@@ -1,3 +1,6 @@
+import { getFilmNumber } from "../../utils/getFilmNumber";
+import getFilmTitleModule from "../getFilmTitle";
+
 const filmTitlesCache = {};
 
 export default async filmUrls => {
@@ -11,7 +14,7 @@ export default async filmUrls => {
         return await filmTitlesCache[filmNumber];
       }
 
-      const title = getFilmTitle(filmUrl);
+      const title = getFilmTitleModule.getFilmTitle(filmUrl);
       filmTitlesCache[filmNumber] = title;
 
       return await title;
@@ -19,24 +22,4 @@ export default async filmUrls => {
   );
 
   return result.join(", ");
-};
-
-const getFilmNumber = filmUrl => {
-  // https://swapi.co/api/films/1/ => 1
-  return filmUrl.replace("https://swapi.co/api/films/").replace("/", "");
-};
-
-const getFilmTitle = async filmUrl => {
-  try {
-    const response = await fetch(filmUrl);
-    const { title } = await response.json();
-
-    return title;
-  } catch (error) {
-    // error handing - simply log error to console
-    // and return empty array
-    console.log(`error with fetch`);
-    console.log(error);
-    return [];
-  }
 };

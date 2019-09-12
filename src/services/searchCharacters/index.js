@@ -47,7 +47,7 @@ export default async searchTerm => {
   } catch (error) {
     // error handing - simply log error to console
     // and return simple error message
-    console.log(`error with fetch :`);
+    console.log(`error with fetch: `);
     console.log(error);
     return [{ name: "Sorry something has gone wrong" }];
   }

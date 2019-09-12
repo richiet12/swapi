@@ -20,28 +20,17 @@ function App() {
 
   const debouncedSearchTerm = debounce(searchTerm, 500);
 
-  useEffect(
-    () => {
-      console.log(debouncedSearchTerm);
-      // Make sure we have a value (user has entered something in input)
-      if (debouncedSearchTerm) {
-        // Set isSearching state
-        // setIsSearching(true);
-        // Fire off our API call
-        searchCharacters(debouncedSearchTerm).then(results => {
-          console.log({ results });
-          setResults(results);
-        });
-      } else {
-        setResults([]);
-      }
-    },
-    // This is the useEffect input array
-    // Our useEffect function will only execute if this value changes ...
-    // ... and thanks to our hook it will only change if the original ...
-    // value (searchTerm) hasn't changed for more than 500ms.
-    [debouncedSearchTerm]
-  );
+  useEffect(() => {
+    console.log(debouncedSearchTerm);
+    if (debouncedSearchTerm) {
+      searchCharacters(debouncedSearchTerm).then(results => {
+        console.log({ results });
+        setResults(results);
+      });
+    } else {
+      setResults([]);
+    }
+  }, [debouncedSearchTerm]);
 
   return (
     <Fragment>
