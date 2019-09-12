@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import PropTypes from "prop-types";
 
 import Heading from "../Heading";
 
@@ -11,6 +12,10 @@ const Header = ({ children }) => {
       <Heading level={1}>{children}</Heading>
     </header>
   );
+};
+
+Header.prototype = {
+  children: PropTypes.node
 };
 
 export default Header;

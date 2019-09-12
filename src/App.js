@@ -21,10 +21,8 @@ function App() {
   const debouncedSearchTerm = debounce(searchTerm, 500);
 
   useEffect(() => {
-    console.log(debouncedSearchTerm);
     if (debouncedSearchTerm) {
       searchCharacters(debouncedSearchTerm).then(results => {
-        console.log({ results });
         setResults(results);
       });
     } else {

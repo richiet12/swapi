@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import PropTypes from "prop-types";
 
 import * as styles from "./styles";
 
-export default ({ searchTerm, handleSearchTermChange }) => {
+const CharacterSearch = ({ searchTerm, handleSearchTermChange }) => {
   const onSubmit = event => {
     event.preventDefault();
     handleSearchTermChange(event);
@@ -25,4 +26,10 @@ export default ({ searchTerm, handleSearchTermChange }) => {
     </form>
   );
 };
-// TODO Proptypes
+
+CharacterSearch.prototype = {
+  searchTerm: PropTypes.string,
+  handleSearchTermChange: PropTypes.func
+};
+
+export default CharacterSearch;

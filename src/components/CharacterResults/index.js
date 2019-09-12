@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import PropTypes from "prop-types";
 
 import CharacterResult from "../CharacterResult";
 
 import * as styles from "./styles";
 
-export default ({ results, searchTerm }) => {
-  console.log(results);
+const CharacterResults = ({ results }) => {
   return (
     <div css={styles.results}>
       {results.map(result => {
@@ -15,3 +15,14 @@ export default ({ results, searchTerm }) => {
     </div>
   );
 };
+
+CharacterResults.prototype = {
+  result: PropTypes.arrayOf({
+    name: PropTypes.string,
+    traits: PropTypes.shape({
+      films: PropTypes.string
+    })
+  })
+};
+
+export default CharacterResults;

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import PropTypes from "prop-types";
 
 import Heading from "../Heading";
 
@@ -9,9 +10,7 @@ const capitalize = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-export default ({ result: { name, traits } }) => {
-  console.log(name);
-  console.log(traits);
+const CharacterResult = ({ result: { name, traits } }) => {
   return (
     <div css={styles.result}>
       <Heading level="3">{name}</Heading>
@@ -42,3 +41,14 @@ export default ({ result: { name, traits } }) => {
     </div>
   );
 };
+
+CharacterResult.prototype = {
+  result: PropTypes.arrayOf({
+    name: PropTypes.string,
+    traits: PropTypes.shape({
+      films: PropTypes.string
+    })
+  })
+};
+
+export default CharacterResult;
