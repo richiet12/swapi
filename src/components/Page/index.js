@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { css, jsx, Global } from '@emotion/core';
-import React from 'react';
-import * as styles from './styles'; 
-
+import { jsx, Global } from "@emotion/core";
+import React from "react";
+import * as styles from "./styles";
 
 const Page = ({ children }) => {
   return (

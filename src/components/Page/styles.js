@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
-import { fonts, colours } from '../../designs/theme';
+import { css } from "@emotion/core";
+import { fonts, colours } from "../../designs/theme";
 
 export const page = css`
   margin: 0 auto;
@@ -15,8 +15,8 @@ export const global = css`
   }
 
   body {
-	background: ${colours.brand2};
-	color: ${colours.fontBase};
+    background: ${colours.brand2};
+    color: ${colours.fontBase};
     font-size: 16px;
     font-size: 1.6rem;
     line-height: 1.5;
