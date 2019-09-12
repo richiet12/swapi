@@ -14,7 +14,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.1.4"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
